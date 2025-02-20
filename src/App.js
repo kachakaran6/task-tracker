@@ -5,7 +5,7 @@ import Todo from "./components/ToDo";
 
 function App() {
   const [taskList, setTaskList] = useState([]);
-  const [completed, setCompleted] = useState;
+  const [completed, setCompleted] = useState([]); // Fix: Initialize with empty array
 
   useEffect(() => {
     let array = localStorage.getItem("taskList");
@@ -31,6 +31,7 @@ function App() {
       { moveTask, projectName, taskDescription },
     ]);
   };
+
   return (
     <div>
       <h1 className="text-2xl font-bold py-6 pl-6">Task Tracker</h1>
@@ -49,15 +50,13 @@ function App() {
             .slice(0)
             .reverse()
             .map((task, i) => (
-              <>
-                <Todo
-                  key={new Date().getTime()}
-                  task={task}
-                  index={i}
-                  taskList={taskList}
-                  setTaskList={setTaskList}
-                />
-              </>
+              <Todo
+                key={new Date().getTime()}
+                task={task}
+                index={i}
+                taskList={taskList}
+                setTaskList={setTaskList}
+              />
             ))}
         </div>
         <div className="w-full flex flex-col" ref={drop}>
@@ -68,15 +67,13 @@ function App() {
             .slice(0)
             .reverse()
             .map((task, i) => (
-              <>
-                <Todo
-                  key={new Date().getTime()}
-                  task={task}
-                  index={i}
-                  taskList={taskList}
-                  setTaskList={setTaskList}
-                />
-              </>
+              <Todo
+                key={new Date().getTime()}
+                task={task}
+                index={i}
+                taskList={taskList}
+                setTaskList={setTaskList}
+              />
             ))}
         </div>
       </div>

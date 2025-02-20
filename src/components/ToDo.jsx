@@ -2,7 +2,6 @@ import { useDrag } from "react-dnd";
 import EditTask from "./EditTask";
 
 const Todo = ({ task, index, taskList, setTaskList }) => {
-  // eslint-disable-next-line no-unused-vars
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "todo",
     item: {
