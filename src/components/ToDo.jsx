@@ -2,8 +2,14 @@ import { useDrag } from "react-dnd";
 import EditTask from "./EditTask";
 
 const Todo = ({ task, index, taskList, setTaskList }) => {
+  // eslint-disable-next-line no-unused-vars
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "todo",
+    item: {
+      id: index,
+      projectName: task.projectName,
+      taskDescription: task.taskDescription,
+    },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -35,7 +41,7 @@ const Todo = ({ task, index, taskList, setTaskList }) => {
           />
         </div>
         <p className="text-lg py-2">{task.taskDescription}</p>
-        <div className="w-full flex justify-center">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-evenly">
           <button
             onClick={handleDelete}
             className="bg-red-500 text-black text-sm uppercase font-semibold py-1.5 px-3 mt-6 mb-1 rounded-lg"
