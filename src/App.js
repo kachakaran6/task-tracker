@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import { useDrop } from "react-dnd";
