@@ -2,7 +2,7 @@ import { useDrag } from "react-dnd";
 import EditTask from "./EditTask";
 
 const Todo = ({ task, index, taskList, setTaskList }) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
+  const [, drag] = useDrag(() => ({
     type: "todo",
     item: {
       id: index,
