@@ -27,7 +27,7 @@ const Todo = ({ task, index, taskList, setTaskList }) => {
   return (
     <>
       <div
-        className="flex flex-col items-start justify-start bg-pink-100 my-4 ml-6 py-4 px-6 w-3/4 max-w-lg"
+        className="flex flex-col items-start justify-start bg-pink-100 my-4 py-4 px-6 w-3/4 max-w-lg"
         ref={drag}
       >
         <div className="w-full flex flex-row justify-between ">
